@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1026965056728-vrks4nffq6ca8j1ep40u3qb2ah06astt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1026965056728-vrks4nffq6ca8j1ep40u3qb2ah06astt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCZeQ5O29-uvRC-Z3p91Bk7i8SiDVTcc_4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1026965056728</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>news.usapolls.USAPOLLS</string>
+	<key>PROJECT_ID</key>
+	<string>usapolls</string>
+	<key>STORAGE_BUCKET</key>
+	<string>usapolls.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1026965056728:ios:99f37e1ebec0f10df9fbad</string>
+	<key>DATABASE_URL</key>
+	<string>https://usapolls.firebaseio.com</string>
+</dict>
+</plist>
