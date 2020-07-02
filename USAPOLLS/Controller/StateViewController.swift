@@ -17,6 +17,7 @@ class StateViewController: UIViewController {
     let entriesNumber = ["AZ": 0, "FL": 1, "GA": 2, "IA": 3, "MI": 4,"NC": 5, "NH": 6, "NV": 7, "OH": 8, "PA": 9, "TX": 10, "WI": 11]
     let listStates = ["AZ", "FL", "GA", "IA", "MI","NC", "NH", "NV", "OH", "PA", "TX", "WI"]
     
+    @IBOutlet weak var currentMargin: UILabel!
     @IBOutlet weak var stateName: UILabel!
     @IBOutlet weak var bidenPercent: UILabel!
     @IBOutlet weak var trumpPercent: UILabel!
@@ -31,6 +32,14 @@ class StateViewController: UIViewController {
     @IBOutlet weak var winner2008: UIImageView!
     @IBOutlet weak var winner2004: UIImageView!
     
+    @IBOutlet weak var whiteStats: UILabel!
+    @IBOutlet weak var africanAmericansStats: UILabel!
+    @IBOutlet weak var hispanicStats: UILabel!
+    @IBOutlet weak var nativeAmericansStats: UILabel!
+    @IBOutlet weak var asiansStats: UILabel!
+    @IBOutlet weak var populationStats: UILabel!
+    
+    
     var collection: States = States()
     var currentEntrie = 0
     
@@ -43,9 +52,31 @@ class StateViewController: UIViewController {
         
         currentEntrie = entriesNumber[state.abb]!
         
-        stateName.text = state.stateName!
-        electoralVotesLabel.text = "\(state.electoralVotes ?? 0) Votes"
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
         
+        let formattedNumber = numberFormatter.string(from: NSNumber(value:state.population))
+        
+        // DISPLAY STATS
+        populationStats.text = "Population: \(formattedNumber ?? "0,000,000")"
+        whiteStats.text = "\(state.demography[0])"
+        africanAmericansStats.text = "\(state.demography[1])"
+        hispanicStats.text = "\(state.demography[2])"
+        nativeAmericansStats.text = "\(state.demography[3])"
+        asiansStats.text = "\(state.demography[4])"
+        
+        
+        stateName.text = state.stateName!
+        electoralVotesLabel.text = "\(state.electoralVotes) Votes"
+        if state.bidenScore > state.trumpScore {
+            currentMargin.text = String(format: "Biden +%0.2f", state.bidenScore - state.trumpScore)
+            currentMargin.textColor = UIColor.blue
+        } else {
+            currentMargin.text = String(format: "Trump +%0.2f",  state.trumpScore - state.bidenScore)
+            currentMargin.textColor = UIColor.red
+        }
+        
+
         //print(state.stateName!)
         //print(bidenScore)
         //print(trumpScore)
